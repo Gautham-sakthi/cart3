@@ -31,7 +31,8 @@ function Products(props) {
             <button type='button' onClick={handleButton}>add new item in product</button>
             <hr/>
             <h1>Default product list</h1>
-            {props.array.map((el,index)=><div key={index}><p>{`item name: ${el.name} price: $${el.price}`}</p><button onClick={()=>props.handleAddtoCart(el)}>Add</button></div>)}
+            {props.array.map((el,index)=><div key={index}><p>{`item name: ${el.name} price: $${el.price}`}</p>
+            <button onClick={()=>props.handleAddtoCart(el)}>Add</button></div>)}
         </div>
     )
 }

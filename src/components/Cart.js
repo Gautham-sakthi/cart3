@@ -5,7 +5,9 @@ function Cart(props) {
     console.log(totalPrice)
     return (
         <div>
-            {props.array.map((el,index)=><div key={index}><p>{`product name: ${el.name}, total price is:${el.count*el.price}`}</p> <button onClick={()=>props.handleAdd(el)}>+</button> <button onClick={()=>props.handleRemove(el)}>-</button> {el.count} </div>)}
+            {props.array.map((el,index)=><div key={index}><p>{`product name: ${el.name}, total price is:${el.count*el.price}`}</p>
+            <button onClick={()=>props.handleAdd(el)}>+</button> 
+            <button onClick={()=>props.handleRemove(el)}>-</button> {el.count} </div>)}
             <p>total price:{totalPrice}</p>
         </div>
     )
