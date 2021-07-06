@@ -20,7 +20,7 @@ useEffect(() => {
   let newData;
       if(data.length){
         newData = data.map(el=> { 
-          return {...el,count:+1}  
+          return {...el,count:1}  
         } )
         setProductList(newData) 
       } 
@@ -81,7 +81,7 @@ useEffect(() => {
         <Cart array={cartList} handleRemove={removeOnefromCart} handleAdd={addOneToCart}/>
         </Route>
         <Route exact path="/">
-        <Products array={productList} handleAddtoCart={addOneToCart} settingProduct={setProductList}/>
+        <Products array={productList} cartArray={cartList }handleAddtoCart={addOneToCart} settingProduct={setProductList}/>
         </Route> 
         </Switch>
 </Router>

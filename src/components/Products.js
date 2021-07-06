@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 
 function Products(props) {
     const [name, setName] = useState('');
@@ -25,14 +25,19 @@ function Products(props) {
     }
     return (
         <div>
+            <div>
             <h1>Add new items in product</h1>
             <input type='text' placeholder='itemname' onChange={(event)=>nameChange(event)}></input><br/>
             <input type='text' placeholder='price' onChange={(event)=>costChange(event)}></input><br/>
             <button type='button' onClick={handleButton}>add new item in product</button>
             <hr/>
             <h1>Default product list</h1>
-            {props.array.map((el,index)=><div key={index}><p>{`item name: ${el.name} price: $${el.price}`}</p>
+            <h1>{`the items in cart is ${props.cartArray.length}`}</h1>
+            {props.array.map((el,index)=><div key={index}><p>{`item name: ${el.name} price: $${el.price} ${el.count-1}`}</p>
             <button onClick={()=>props.handleAddtoCart(el)}>Add</button></div>)}
+            </div>
+            <div>
+            </div>
         </div>
     )
 }
